@@ -43,6 +43,11 @@
     <%- include('../partials/chatbot_widget') %>
   <% } %>
 
+  <!-- Auth Modal -->
+  <% if (typeof user === 'undefined' || !user) { %>
+    <%- include('../partials/auth_modal') %>
+  <% } %>
+
   <!-- Dark Mode & Toast JS -->
   <script src="/js/app.js"></script>
 
