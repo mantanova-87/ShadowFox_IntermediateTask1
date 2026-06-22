@@ -1,0 +1,81 @@
+<footer class="bg-navy-DEFAULT dark:bg-neutral-950 text-white mt-auto">
+  <!-- Main Footer Grid -->
+  <div class="max-w-screen-xl mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+    <!-- Brand Column -->
+    <div class="space-y-4">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+        </div>
+        <span class="text-xl font-bold tracking-tight">E-Bazar</span>
+      </div>
+      <p class="text-sm text-neutral-400 leading-relaxed max-w-xs">
+        India's premier multi-role marketplace. Buy, sell, and discover millions of products with AI-powered search.
+      </p>
+      <!-- Social Icons -->
+      <div class="flex items-center gap-3">
+        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors duration-150" aria-label="Facebook">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors duration-150" aria-label="Twitter">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        </a>
+        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors duration-150" aria-label="Instagram">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Customer Links -->
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-widest text-neutral-400 mb-4">Customer</h3>
+      <ul class="space-y-2.5">
+        <li><a href="/products" class="text-sm text-neutral-300 hover:text-white transition-colors duration-150">Browse Products</a></li>
+        <li><a href="/orders" class="text-sm text-neutral-300 hover:text-white transition-colors duration-150">Track Orders</a></li>
+        <li><a href="/wishlist" class="text-sm text-neutral-300 hover:text-white transition-colors duration-150">Wishlist</a></li>
+        <li><a href="/cart" class="text-sm text-neutral-300 hover:text-white transition-colors duration-150">Cart</a></li>
+        <li><a href="/account/complaints" class="text-sm text-neutral-300 hover:text-white transition-colors duration-150">Complaints</a></li>
+      </ul>
+    </div>
+
+    <!-- Seller Links -->
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-widest text-neutral-400 mb-4">Sell on E-Bazar</h3>
+      <ul class="space-y-2.5">
+        <li><a href="/seller/register" class="text-sm text-neutral-300 hover:text-white transition-colors duration-150">Become a Seller</a></li>
+        <li><a href="/seller/dashboard" class="text-sm text-neutral-300 hover:text-white transition-colors duration-150">Seller Dashboard</a></li>
+        <li><a href="/seller/products" class="text-sm text-neutral-300 hover:text-white transition-colors duration-150">Manage Products</a></li>
+        <li><a href="/seller/orders" class="text-sm text-neutral-300 hover:text-white transition-colors duration-150">View Orders</a></li>
+        <li><a href="/seller/inventory" class="text-sm text-neutral-300 hover:text-white transition-colors duration-150">Inventory</a></li>
+      </ul>
+    </div>
+
+    <!-- Company / Legal Links -->
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-widest text-neutral-400 mb-4">Company</h3>
+      <ul class="space-y-2.5">
+        <li><a href="/about" class="text-sm text-neutral-300 hover:text-white transition-colors duration-150">About Us</a></li>
+        <li><a href="/contact" class="text-sm text-neutral-300 hover:text-white transition-colors duration-150">Contact</a></li>
+        <li><a href="/privacy" class="text-sm text-neutral-300 hover:text-white transition-colors duration-150">Privacy Policy</a></li>
+        <li><a href="/terms" class="text-sm text-neutral-300 hover:text-white transition-colors duration-150">Terms of Service</a></li>
+        <li><a href="/refund-policy" class="text-sm text-neutral-300 hover:text-white transition-colors duration-150">Refund Policy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-white/10">
+    <div class="max-w-screen-xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p class="text-xs text-neutral-500">&copy; <%= new Date().getFullYear() %> E-Bazar. All rights reserved.</p>
+      <div class="flex items-center gap-1 text-xs text-neutral-500">
+        <svg class="w-3.5 h-3.5 text-teal-DEFAULT" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+        Secure Checkout &nbsp;·&nbsp; 100% Buyer Protection
+      </div>
+    </div>
+  </div>
+</footer>

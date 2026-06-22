@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Premium Glassmorphism Card components */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .dark .glass-card {
+    background: rgba(31, 41, 55, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Deep blur panels (e.g. Navigation Header, Chat Widget) */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .dark .glass-panel {
+    background: rgba(17, 24, 39, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Glassmorphism Inputs */
+  .glass-input {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(229, 231, 235, 1);
+  }
+
+  .dark .glass-input {
+    background: rgba(31, 41, 55, 0.7);
+    border: 1px solid rgba(55, 65, 81, 1);
+  }
+
+  .glass-input:focus {
+    outline: none;
+    border-color: #2563EB;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+  }
+
+  .dark .glass-input:focus {
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
+  }
+}
