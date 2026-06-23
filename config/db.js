@@ -18,7 +18,7 @@ const connectDB = async () => {
       return;
     } catch (err) {
       retries -= 1;
-      console.error(`MongoDB connection error: ${err.message}`);
+      console.error('MongoDB connection error:', err);
       if (retries === 0) {
         if (isDev) {
           console.warn('⚠️  MongoDB unavailable — running without DB. Routes requiring a database will fail.');
