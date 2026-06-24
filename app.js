@@ -49,12 +49,12 @@ app.get('/health', (req, res) => {
 });
 
 // ── API Routes ────────────────────────────────────────────────────────────────
-app.use('/api/v1/auth',     require('./routes/authRoutes'));
+app.use('/api/v1/auth', require('./routes/authRoutes'));
 app.use('/api/v1/products', require('./routes/productRoutes'));
-app.use('/api/v1/cart',     require('./routes/cartRoutes'));
-app.use('/api/v1/orders',   require('./routes/orderRoutes'));
-app.use('/api/v1/seller',   require('./routes/sellerRoutes'));
-app.use('/api/v1/chat',     require('./routes/chatRoutes'));
+app.use('/api/v1/cart', require('./routes/cartRoutes'));
+app.use('/api/v1/orders', require('./routes/orderRoutes'));
+app.use('/api/v1/seller', require('./routes/sellerRoutes'));
+app.use('/api/v1/chat', require('./routes/chatRoutes'));
 
 // ── Admin Panel (hidden URL from .env) ────────────────────────────────────────
 app.use(`${adminPath}/api`, require('./routes/adminRoutes'));
@@ -95,7 +95,19 @@ app.get(adminPath, auth, (req, res) => {
     user: req.user,
   });
 });
+app.get('/auth/login', (req, res) => {
+  res.render('auth/login', {
+    title: 'Login - E-Bazar',
+    user: null
+  });
+});
 
+app.get('/auth/register', (req, res) => {
+  res.render('auth/signup', {
+    title: 'Register - E-Bazar',
+    user: null
+  });
+});
 // ── 404 Handler ───────────────────────────────────────────────────────────────
 app.use((req, res) => {
   // Render EJS 404 for page requests, JSON for API

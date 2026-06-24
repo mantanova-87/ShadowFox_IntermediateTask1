@@ -79,20 +79,20 @@ exports.login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email })
+      .select('+passwordHash');
+
     if (!user) {
       const err = new Error('Invalid credentials');
       err.statusCode = 401;
       return next(err);
     }
 
-    if (user.status === 'banned' || user.status === 'suspended') {
-      const err = new Error('Your account is blocked. Please contact support.');
-      err.statusCode = 403;
-      return next(err);
-    }
+    const isMatch = await bcrypt.compare(
+      password,
+      user.passwordHash
+    );
 
-    const isMatch = await bcrypt.compare(password, user.passwordHash);
     if (!isMatch) {
       const err = new Error('Invalid credentials');
       err.statusCode = 401;
@@ -100,7 +100,11 @@ exports.login = async (req, res, next) => {
     }
 
     const token = jwt.sign(
-      { userId: user._id, role: user.role, email: user.email },
+      {
+        userId: user._id,
+        role: user.role,
+        email: user.email
+      },
       jwtSecret,
       { expiresIn: jwtExpiresIn }
     );
@@ -109,19 +113,10 @@ exports.login = async (req, res, next) => {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
-      maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
+      maxAge: 7 * 24 * 60 * 60 * 1000
     });
 
-    res.json({
-      success: true,
-      user: {
-        id: user._id,
-        name: user.name,
-        email: user.email,
-        role: user.role,
-        isVerified: user.isVerified
-      }
-    });
+    res.redirect('/');
   } catch (err) {
     next(err);
   }
@@ -132,9 +127,9 @@ exports.logout = (req, res) => {
     httpOnly: true,
     expires: new Date(0)
   });
-  res.json({ success: true, message: 'Logged out successfully' });
-};
 
+  return res.redirect('/');
+};
 exports.verifyEmail = async (req, res, next) => {
   try {
     const { token } = req.params;
@@ -249,7 +244,7 @@ exports.deleteAccount = async (req, res, next) => {
 
     // Clear session
     res.cookie('auth_token', '', { httpOnly: true, expires: new Date(0) });
-    
+
     res.json({ success: true, message: 'Account deleted successfully' });
   } catch (err) {
     next(err);

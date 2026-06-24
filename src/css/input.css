@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer components {
+
   /* Premium Glassmorphism Card components */
   .glass-card {
     background: rgba(255, 255, 255, 0.6);
@@ -35,7 +36,7 @@
 
   /* Glassmorphism Inputs */
   .glass-input {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(9, 2, 2, 0.8);
     border: 1px solid rgba(229, 231, 235, 1);
   }
 

@@ -1,0 +1,18 @@
+<div class="max-w-md mx-auto py-12">
+    <h1 class="text-3xl font-bold mb-6">Login</h1>
+
+    <form action="/api/v1/auth/login" method="POST" class="space-y-4">
+
+        <input type="email" name="email" placeholder="Email"
+            class="w-full p-3 border border-neutral-300 rounded bg-white text-neutral-900 placeholder-neutral-500"
+            required>
+
+        <input type="password" name="password" placeholder="Password"
+            class="w-full p-3 border border-neutral-300 rounded bg-white text-neutral-900 placeholder-neutral-500"
+            required>
+
+        <button type="submit" class="w-full bg-primary text-white py-3 rounded">
+            Login
+        </button>
+    </form>
+</div>

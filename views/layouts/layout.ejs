@@ -1,57 +1,64 @@
 <!DOCTYPE html>
 <html lang="en" class="<%= typeof darkMode !== 'undefined' && darkMode ? 'dark' : '' %>">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="<%= typeof metaDesc !== 'undefined' ? metaDesc : 'E-Bazar — India\'s multi-role marketplace for buyers and sellers' %>" />
-  <title><%= typeof title !== 'undefined' ? title + ' | E-Bazar' : 'E-Bazar — Shop Everything' %></title>
+  <meta name="description"
+    content="<%= typeof metaDesc !== 'undefined' ? metaDesc : 'E-Bazar — India\'s multi-role marketplace for buyers and sellers' %>" />
+  <title>
+    <%= typeof title !=='undefined' ? title + ' | E-Bazar' : 'E-Bazar — Shop Everything' %>
+  </title>
 
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
 
   <!-- Tailwind CSS (compiled output) -->
   <link rel="stylesheet" href="/css/dist.css" />
 
   <!-- Page-level styles injected by child views -->
-  <%- typeof style !== 'undefined' ? style : '' %>
+  <%- typeof style !=='undefined' ? style : '' %>
 </head>
-<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-50 font-sans antialiased min-h-screen flex flex-col transition-colors duration-200">
+
+<body
+  class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-50 font-sans antialiased min-h-screen flex flex-col transition-colors duration-200">
 
   <!-- Skip to main content (Accessibility) -->
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-primary text-white px-4 py-2 rounded-lg z-50 font-medium">
+  <a href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-primary text-white px-4 py-2 rounded-lg z-50 font-medium">
     Skip to main content
   </a>
 
   <!-- Global Toast Notification Container -->
-  <div id="toast-container" class="fixed top-4 right-4 z-[9999] flex flex-col gap-2 pointer-events-none" aria-live="polite"></div>
+  <div id="toast-container" class="fixed top-4 right-4 z-[9999] flex flex-col gap-2 pointer-events-none"
+    aria-live="polite"></div>
 
   <!-- Top Navigation Bar -->
   <%- include('../partials/navbar') %>
 
-  <!-- Main Content Area -->
-  <main id="main-content" class="flex-1">
-    <%- body %>
-  </main>
+    <!-- Main Content Area -->
+    <main id="main-content" class="flex-1">
+      <%- body %>
+    </main>
 
-  <!-- Footer -->
-  <%- include('../partials/footer') %>
+    <!-- Footer -->
+    <%- include('../partials/footer') %>
 
-  <!-- AI Chatbot Widget (shown on all storefront pages) -->
-  <% if (typeof showChatbot === 'undefined' || showChatbot !== false) { %>
-    <%- include('../partials/chatbot_widget') %>
-  <% } %>
+      <!-- AI Chatbot Widget (shown on all storefront pages) -->
+      <% if (typeof showChatbot==='undefined' || showChatbot !==false) { %>
+        <%- include('../partials/chatbot_widget') %>
+          <% } %>
 
-  <!-- Auth Modal -->
-  <% if (typeof user === 'undefined' || !user) { %>
-    <%- include('../partials/auth_modal') %>
-  <% } %>
 
-  <!-- Dark Mode & Toast JS -->
-  <script src="/js/app.js"></script>
 
-  <!-- Page-level scripts injected by child views -->
-  <%- typeof script !== 'undefined' ? script : '' %>
+            <!-- Dark Mode & Toast JS -->
+            <script src="/js/app.js"></script>
+
+            <!-- Page-level scripts injected by child views -->
+            <%- typeof script !=='undefined' ? script : '' %>
 </body>
+
 </html>
